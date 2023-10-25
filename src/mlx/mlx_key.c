@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_key.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/16 21:43:47 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/25 23:51:36 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	mlx_key_release(int keycode, t_all *data)
 	else if (keycode == ROTATE_RIGHT)
 		data->key.pov = 0;
 	else if (keycode == ESC)
-	{	
+	{
 		printf("... exit cub3D\n");
 		exit(0);
 	}
@@ -57,17 +57,16 @@ int	mlx_key(int keycode, t_all *data)
 	else if (keycode == ROTATE_RIGHT)
 		data->key.pov = -1;
 	else if (keycode == ESC)
-	{	
+	{
 		printf("... exit cub3D\n");
 		exit(0);
 	}
 	return (0);
 }
 
-int mlx_keypress(t_all *data)
+int	mlx_keypress(t_all *data)
 {
 	mlx_clear_window(data->mlx.mlx, data->mlx.win);
-
 	if (data->key.pov == 1)
 		rotate_left_and_right(data, 1);
 	else if (data->key.pov == -1)

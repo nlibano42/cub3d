@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_valid_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/24 20:11:02 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/25 23:49:17 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,33 @@ int	check_valid_map(t_all *data)
 		return (1);
 	if (check_player(data, 0, 0, 0))
 		return (1);
+	if (check_one_map(data))
+		return (1);
+	return (0);
+}
+
+int	check_one_map(t_all *data)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < data->valid.line_len)
+	{
+		if (data->valid.maps[0][i] == ' ')
+		{
+			j = -1;
+			while (++j < data->valid.map_len)
+			{
+				if (data->valid.maps[j][i] == ' ')
+				{
+					if (j + 1 == data->valid.map_len)
+						return (1);
+				}
+				else
+					break ;
+			}
+		}
+	}
 	return (0);
 }

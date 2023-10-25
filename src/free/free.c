@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/16 19:07:43 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/25 23:52:28 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	free_map(char **arr)
 
 	i = 0;
 	while (arr[i])
-        free(arr[i++]);
-    free(arr);
+		free(arr[i++]);
+	free(arr);
 }
 
 void	free_all(t_all *data)

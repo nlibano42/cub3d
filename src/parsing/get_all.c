@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   get_all.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/16 19:04:20 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/25 23:50:57 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/include.h"
 
-int get_dir_meta(t_all *d, const char *dir, char **dest, int *index)
+int	get_dir_meta(t_all *d, const char *dir, char **dest, int *index)
 {
-	int i;
-	char *tmp;
+	int		i;
+	char	*tmp;
 
 	i = 0;
 	while (d->parse.all[i])

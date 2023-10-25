@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/24 19:12:55 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/25 23:54:27 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,9 +228,13 @@ int					check_wall(t_all *data, double y, double x);
 int					check_wall_y(t_all *data, int x_wall, int y_wall);
 int					check_wall_x(t_all *data, int x_wall, int y_wall);
 
+// check_one_map
+int					check_one_map(t_all *data);
+
 // drawing
 int					draw(t_all *data);
-void				init_player_position(t_all *data, int x, int y, int *player);
+void				init_player_position(t_all *data, int x, int y, \
+					int *player);
 double				normalize_angle(double ang);
 double				calculate_distance(t_all *data, double y, double x);
 int					is_left(double ang);
