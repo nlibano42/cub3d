@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_colors_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/24 19:17:19 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:40:09 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	check_is_rgb(char **rgb)
 	i = 0;
 	while (rgb[i])
 	{
+		if (ft_strlen(rgb[i]) > 3)
+			return (1);
 		j = 0;
 		number = ft_atoi(rgb[i]);
 		if (!(number >= 0 && number <= 255))
