@@ -6,27 +6,49 @@
 /*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/16 21:51:33 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:15:50 by ruramire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/include.h"
 
-void	move_player(t_all *data, int x_factor, int y_factor)
+void	move_up(t_all *data)
 {
-	double	x_mult;
-	double	y_mult;
-	double	check_x;
-	double	check_y;
-
-	x_mult = cos(data->direction_ang) * x_factor;
-	y_mult = sin(data->direction_ang) * y_factor;
-	check_x = data->x_player + 1 * x_mult;
-	check_y = data->y_player + 1 * y_mult;
-	if (!check_wall(data, check_y, check_x))
+	if (!check_wall(data, data->y_player + 1 * sin(data->direction_ang), \
+	data->x_player + 1 * cos(data->direction_ang)))
 	{
-		data->x_player += 0.2 * x_mult;
-		data->y_player += 0.2 * y_mult;
+	data->x_player = data->x_player + 1 * cos(data->direction_ang);
+	data->y_player = data->y_player + 1 * sin(data->direction_ang);
+	}
+}
+
+void	move_down(t_all *data)
+{
+	if (!check_wall(data, data->y_player - 1 * sin(data->direction_ang), \
+	data->x_player - 1 * cos(data->direction_ang)))
+	{
+		data->x_player = data->x_player - 1 * cos(data->direction_ang);
+		data->y_player = data->y_player - 1 * sin(data->direction_ang);
+	}
+}
+
+void	move_left(t_all *data)
+{
+	if (!check_wall(data, data->y_player - 1 * cos(data->direction_ang), \
+	data->x_player + 1 * sin(data->direction_ang)))
+	{
+		data->x_player = data->x_player + 1 * sin(data->direction_ang);
+		data->y_player = data->y_player - 1 * cos(data->direction_ang);
+	}
+}
+
+void	move_right(t_all *data)
+{
+	if (!check_wall(data, data->y_player + 1 * cos(data->direction_ang), \
+	data->x_player - 1 * sin(data->direction_ang)))
+	{
+		data->x_player = data->x_player - 1 * sin(data->direction_ang);
+		data->y_player = data->y_player + 1 * cos(data->direction_ang);
 	}
 }
 

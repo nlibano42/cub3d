@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/27 15:14:31 by nlibano-         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:15:12 by ruramire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,10 @@ void				my_mlx_pixel_put(t_all *data, int x, int y, \
 
 // list of functions that are used to move the player around the map.
 void				rotate_left_and_right(t_all *data, int direction);
-void				move_player(t_all *data, int x_factor, int y_factor);
+void				move_up(t_all *data);
+void				move_down(t_all *data);
+void				move_left(t_all *data);
+void				move_right(t_all *data);
 
 // parsing
 int					parsing(char *av, t_all *data);

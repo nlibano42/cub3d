@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_key.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/25 23:51:36 by nlibano-         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:16:15 by ruramire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,13 @@ int	mlx_keypress(t_all *data)
 	else if (data->key.pov == -1)
 		rotate_left_and_right(data, 2);
 	else if (data->key.y == 1)
-		move_player(data, 1, 1);
+		move_up(data);
 	else if (data->key.y == -1)
-		move_player(data, -1, -1);
+		move_down(data);
 	else if (data->key.x == 1)
-		move_player(data, 1, -1);
+		move_left(data);
 	else if (data->key.x == -1)
-		move_player(data, -1, 1);
+		move_right(data);
 	draw(data);
 	return (0);
 }
