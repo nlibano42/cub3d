@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_textures_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/09/25 18:00:47 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:17:46 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,19 @@ int	check_is_white_spaces(char *str)
 
 int	open_file(char *str)
 {
-	int	fd;
+	int		fd;
+	char	*s;
 
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
 		return (1);
+	s = get_next_line(fd);
+	if (!s || ft_strncmp(s, "/* XPM */", 9))
+	{
+		free(s);
+		return (1);
+	}
+	free(s);
 	return (0);
 }
 

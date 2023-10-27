@@ -6,7 +6,7 @@
 /*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/25 23:54:27 by nlibano-         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:14:31 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,7 @@ int					parsing(char *av, t_all *data);
 void				init_data(t_all *data);
 int					is_valid_filename(char *av);
 int					read_file(char *file, t_all *data, int i);
+int					open_and_validate_file(char *av);
 
 // free
 void				free_parsing(t_all *data);
