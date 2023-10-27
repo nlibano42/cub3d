@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_actions.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruramire <ruramire@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nlibano- <nlibano-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 12:26:49 by ruramire          #+#    #+#             */
-/*   Updated: 2023/10/27 18:15:50 by ruramire         ###   ########.fr       */
+/*   Updated: 2023/10/27 22:58:02 by nlibano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	move_up(t_all *data)
 	if (!check_wall(data, data->y_player + 1 * sin(data->direction_ang), \
 	data->x_player + 1 * cos(data->direction_ang)))
 	{
-	data->x_player = data->x_player + 1 * cos(data->direction_ang);
-	data->y_player = data->y_player + 1 * sin(data->direction_ang);
+		data->x_player = data->x_player + 1 * cos(data->direction_ang);
+		data->y_player = data->y_player + 1 * sin(data->direction_ang);
 	}
 }
 
